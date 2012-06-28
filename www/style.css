@@ -1,0 +1,38 @@
+#container {
+               //width: 1000px;
+               margin: 0px auto;
+               font-family: Verdana;
+               }
+                     
+p {
+			   margin-left: 75px;
+               text-align: justify;
+               text-indent: 30px;
+               }
+                        
+p.quote {
+                margin-left: 100px;
+                margin-right: 100px;
+                border: 2px solid black;
+                padding: 10px;
+                font-style: italic;
+                background-color: silver;
+                color: #0000cc;
+               }
+              
+#header {
+                text-indent: 30px;
+				background-color:purple;
+                padding: 10px;
+                color:white;
+               }
+
+#header h1 a{
+                text-decoration:none;
+                color:white;
+               }
+
+#footer {
+                text-align: center;
+                clear: both;
+               }
