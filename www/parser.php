@@ -1,26 +1,23 @@
 <?php
 function convert_csv_to_ics($File_name,$Headmaster_name)
 {
-	//$File_name = $_REQUEST['abracadabra'];
-	//echo $File_name;
 	$temp = explode(".",$File_name);
 	$File_name = $temp[0];
-	//$File_name = "ÏÌ 4-1";
-	//$Headmaster_name = "";
-	//$Headmaster_name = "Ôèëîíîâ Ï.Â.";
+	$FAA = $temp[0];
 	$fl = fopen ($File_name.".csv",'rt');
 	if ($Headmaster_name=="") 
 	{
-		$fl_rez = fopen($File_name.".ics",'w');
+		$File_name.=".ics";
 	}
 	else 
 	{
-		$fl_rez = fopen($File_name."(".$Headmaster_name.")".".ics",'w');
+		$File_name.= "(".$Headmaster_name.")".".ics";	
 	}
+	$fl_rez = fopen($File_name,'w');
 	fwrite($fl_rez,"BEGIN:VCALENDAR\nCALSSCALE:GREGORIAN\n");
 	if ($fl) 
 	{
-		$fm = file ('ÏÌ 4-1.csv');
+		$fm = file ($FAA.".csv");
 		$mc = count ($fm);
 		for($i = 0; $i<$mc; $i++)
 		{
@@ -103,7 +100,5 @@ function convert_csv_to_ics($File_name,$Headmaster_name)
 	fwrite($fl_rez,"END:VCALENDAR\n");
 	fclose($fl_rez);
 	fclose($fl);
-	//$loc = "Location:".$fl_rez;
-	//header($loc);
 }
 ?>
